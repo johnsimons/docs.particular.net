@@ -37,51 +37,7 @@ NOTE: Storing your subscriptions in MSMQ is not suitable for scenarios where you
 
 If self hosting, you can configure the persistence technology for each feature. For example, to store subscriptions in-memory and timeouts in RavenDB, use this code:
 
-
-```C#
-static void Main()
-{
-    Configure.With()
-    .Log4Net()
-    .DefaultBuilder()
-    .XmlSerializer()
-    .MsmqTransport()
-    .IsTransactional(true)
-    .PurgeOnStartup(false)
-    .InMemorySubscriptionStorage()
-    .UnicastBus()
-    .ImpersonateSender(false)
-    .LoadMessageHandlers()
-    .UseRavenTimeoutPersister()
-    .CreateBus()
-    .Start(() => Configure.Instance.ForInstallationOn<NServiceBus.Installation.Environments.Windows>().Install());
-}
-
-```
-
-and for NServiceBus v4.x
-
-```C#
-static void Main()
-{
-    Configure.Serialization.Xml();
-
-    Configure.Transactions.Enable();
-
-    Configure.With()
-    .Log4Net()
-    .DefaultBuilder()
-    .UseTransport<Msmq>()
-    .PurgeOnStartup(false)
-    .InMemorySubscriptionStorage()
-    .UnicastBus()
-    .RunHandlersUnderIncomingPrincipal(false)
-    .LoadMessageHandlers()
-    .UseRavenTimeoutPersister()
-    .CreateBus()
-    .Start(() => Configure.Instance.ForInstallationOn<NServiceBus.Installation.Environments.Windows>().Install());
-}
-```
+<!-- import selfhostingconfig -->
 
 When you use NServiceBus.Host.exe out of the box, you can utilize one of the available profiles. The following table shows which persistence technology each pre-built profile configures by default. In addition, you can override the configured defaults. Read more about
 [profiles](profiles-for-nservicebus-host.md) , [here too](more-on-profiles.md).

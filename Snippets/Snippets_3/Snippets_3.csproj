@@ -91,6 +91,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Distributor\ConfiguringDistributor.cs" />
     <Compile Include="Distributor\ConfiguringWorker.cs" />
     <Compile Include="Encryption\PropertyEncryption.cs" />

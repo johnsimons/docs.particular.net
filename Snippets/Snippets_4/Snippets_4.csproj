@@ -202,6 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusExtensionMethodForHandler.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="ContainerCustom.cs" />
     <Compile Include="Conventions\FaqUnobtrusiveConventions.cs" />
     <Compile Include="Conventions\UnobtrusiveConventions.cs" />

@@ -279,6 +279,7 @@
   <ItemGroup>
     <Compile Include="BusExtensionMethodForHandlerReplacement.cs" />
     <Compile Include="BusNotifications\Errors.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="ContainerCustom.cs" />
     <Compile Include="Containers.cs" />
     <Compile Include="Conventions\ExpressMessages.cs" />
